@@ -21,14 +21,14 @@ public class StringSplitter {
         String[] result = source.split(finallystrDelimiters);
         int countOfEmpty = 0;
         for (String s: result){
-            if (s==""){
+            if (s==""||s==" "){
                 countOfEmpty++;
             }
         }
         String[] finalResult = new String[result.length-countOfEmpty];
         int iter = 0;
         for (String s: result){
-            if (s!=""){
+            if (s!=""&&s!=" "){
                 finalResult[iter]=s;
                 iter++;
             }
