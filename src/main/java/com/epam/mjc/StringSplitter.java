@@ -14,26 +14,18 @@ public class StringSplitter {
     public List<String> splitByDelimiters(String source, Collection<String> delimiters) {
         String strDelimiters = "";
         String finallystrDelimiters = "";
+        List<String> resultF = new ArrayList<>();
         for (String s: delimiters){
             strDelimiters += s+"|";
         }
         finallystrDelimiters = strDelimiters.substring(0,strDelimiters.length()-1);
         String[] result = source.split(finallystrDelimiters);
-        int countOfEmpty = 0;
+        //List<String> resultAtList = Arrays.asList(result);
         for (String s: result){
-            if (s==""||s==" "){
-                countOfEmpty++;
+            if (!Objects.equals(s, "") && !Objects.equals(s, " ")){
+                resultF.add(s);
             }
         }
-        String[] finalResult = new String[result.length-countOfEmpty];
-        int iter = 0;
-        for (String s: result){
-            if (s!=""&&s!=" "){
-                finalResult[iter]=s;
-                iter++;
-            }
-        }
-        List<String> resultAtList = Arrays.asList(finalResult);
-        return resultAtList;
+        return resultF;
     }
 }
