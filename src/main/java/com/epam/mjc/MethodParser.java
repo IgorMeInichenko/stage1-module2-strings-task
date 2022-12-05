@@ -1,8 +1,6 @@
 package com.epam.mjc;
 
-import com.sun.jdi.connect.Connector;
 
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class MethodParser {
